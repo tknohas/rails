@@ -10,12 +10,12 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2023_06_23_014308) do
+ActiveRecord::Schema.define(version: 2023_06_23_125057) do
 
   create_table "posts", force: :cascade do |t|
     t.string "title"
     t.date "start"
-    t.date "end"
+    t.date "end_date"
     t.boolean "all_day"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false

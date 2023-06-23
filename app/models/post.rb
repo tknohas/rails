@@ -1,13 +1,16 @@
 class Post < ApplicationRecord
   validates :title, presence: true, length: {maximum: 20}
   validates :start, presence: true
-  validates :end, presence: true
+  validates :end_date, presence: true
   validates :memo, length: {maximum: 500}
   
-  def start_end_check
-    errors.add(:end, "には開始日と同日または後の日付を入力してください") unless
-    self.start <= self.end
-  end
+  validate :start_end_check
 
-validate :start_end_check
+  def start_end_check
+    return false if end_date.blank? || start.blank?
+    if 
+      end_date < start
+      errors.add(:end_date, "には開始日と同日または後の日付を入力してください") 
+    end
+  end
 end

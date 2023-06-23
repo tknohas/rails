@@ -6,5 +6,5 @@ ja:
        post:
          title: タイトル
          start: 開始日
-         end: 終了日
+         end_date: 終了日
          
