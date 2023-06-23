@@ -24,8 +24,8 @@
        <tr>
          <td><%= post.id %></td>
          <td><%= post.title %></td>
-         <td><%= post.start %></td>
-         <td><%= post.end_date %></td>
+         <td><%= post.start.strftime("%Y/%m/%d") %></td>
+         <td><%= post.end_date.strftime("%Y/%m/%d") %></td>
          <td>
 				 	<% if post.all_day %>
 						<strong>○</strong>
